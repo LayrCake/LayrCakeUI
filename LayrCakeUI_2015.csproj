@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA0D81CF-9673-4441-8700-B47CAF1DA365}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LayrCakeUI_2015</RootNamespace>
+    <AssemblyName>LayrCakeUI_2015</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="src\app\core\services\generated\serviceImplementation.tt">
+      <Generator>TextTemplatingFileGenerato</Generator>
+      <LastOutputs>.\serviceImplementation.ts</LastOutputs>
+      <LastGenOutput>serviceImplementation.ts</LastGenOutput>
+    </Content>
+    <Content Include="src\app\shared\modelInterfaces.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>modelInterfaces.ts</LastGenOutput>
+      <LastOutputs>.\modelInterfaces.ts</LastOutputs>
+    </Content>
+    <Content Include="src\app\_controllers\_gen\_create\ng2Create.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastOutputs>.\ng2Create.txt</LastOutputs>
+      <LastGenOutput>ng2Create.txt</LastGenOutput>
+    </Content>
+    <Content Include="src\app\_controllers\_gen\_create\ng2Create.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ng2Create.tt</DependentUpon>
+    </Content>
+    <Content Include="src\app\_controllers\_gen\_detail\ng2Detail.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ng2Detail.ts</LastGenOutput>
+      <LastOutputs>
+.\AspNetUser.ts
+.\Company.ts
+.\DDDAttribute.ts
+.\DDDElement.ts
+.\DDDLayer.ts
+.\DDDLayerTemplate.ts
+.\DDDMethod.ts
+.\DDDPackage.ts
+.\DDDPackageToPackageLink.ts
+.\DDDProject.ts
+.\DDDProperty.ts
+.\DDDSolution.ts
+.\DDDSolutionToPackageLink.ts
+.\MerchantProblemDomainLink.ts
+.\ng2Detail.ts
+.\ProblemDomain.ts
+.\ProblemDomainSolutionLink.ts
+.\Profile.ts
+.\User.ts
+</LastOutputs>
+    </Content>
+    <Content Include="src\app\_controllers\_gen\_edit\ng2Edit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastOutputs>
+.\AspNetUser.ts
+.\Company.ts
+.\DDDAttribute.ts
+.\DDDElement.ts
+.\DDDLayer.ts
+.\DDDLayerTemplate.ts
+.\DDDMethod.ts
+.\DDDPackage.ts
+.\DDDPackageToPackageLink.ts
+.\DDDProject.ts
+.\DDDProperty.ts
+.\DDDSolution.ts
+.\DDDSolutionToPackageLink.ts
+.\MerchantProblemDomainLink.ts
+.\ng2Edit.txt
+.\ProblemDomain.ts
+.\ProblemDomainSolutionLink.ts
+.\Profile.ts
+.\User.ts
+</LastOutputs>
+      <LastGenOutput>ng2Edit.txt</LastGenOutput>
+    </Content>
+    <Content Include="src\app\_controllers\_gen\_edit\ng2Edit.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </Content>
+    <Content Include="src\app\_controllers\_gen\_list\ng2List.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ng2List.ts</LastGenOutput>
+      <LastOutputs>
+.\AspNetUser.ts
+.\Company.ts
+.\DDDAttribute.ts
+.\DDDElement.ts
+.\DDDLayer.ts
+.\DDDLayerTemplate.ts
+.\DDDMethod.ts
+.\DDDPackage.ts
+.\DDDPackageToPackageLink.ts
+.\DDDProject.ts
+.\DDDProperty.ts
+.\DDDSolution.ts
+.\DDDSolutionToPackageLink.ts
+.\MerchantProblemDomainLink.ts
+.\ng2List.ts
+.\ProblemDomain.ts
+.\ProblemDomainSolutionLink.ts
+.\Profile.ts
+.\User.ts
+</LastOutputs>
+    </Content>
+    <Content Include="src\app\_models\_gen\modelInterfaces.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>modelInterfaces.ts</LastGenOutput>
+      <LastOutputs>.\modelInterfaces.ts</LastOutputs>
+    </Content>
+    <Content Include="src\app\_services\_gen\serviceImplementation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>serviceImplementation.ts</LastGenOutput>
+      <LastOutputs>.\serviceImplementation.ts</LastOutputs>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="src\app\shared\modelInterfaces.ts">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>modelInterfaces.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\AspNetUser.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\Company.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDAttribute.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDElement.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDLayer.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDLayerTemplate.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDMethod.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDPackage.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDPackageToPackageLink.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDProject.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDProperty.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDSolution.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\DDDSolutionToPackageLink.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\MerchantProblemDomainLink.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\ng2Detail.ts">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\ProblemDomain.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\ProblemDomainSolutionLink.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\Profile.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_detail\User.ts">
+      <DependentUpon>ng2Detail.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\AspNetUser.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\Company.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDAttribute.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDElement.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDLayer.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDLayerTemplate.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDMethod.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDPackage.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDPackageToPackageLink.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDProject.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDProperty.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDSolution.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\DDDSolutionToPackageLink.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\MerchantProblemDomainLink.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\ProblemDomain.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\ProblemDomainSolutionLink.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\Profile.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_edit\User.ts">
+      <DependentUpon>ng2Edit.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\AspNetUser.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\Company.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDAttribute.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDElement.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDLayer.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDLayerTemplate.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDMethod.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDPackage.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDPackageToPackageLink.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDProject.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDProperty.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDSolution.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\DDDSolutionToPackageLink.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\MerchantProblemDomainLink.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\ng2List.ts">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\ProblemDomain.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\ProblemDomainSolutionLink.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\Profile.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_controllers\_gen\_list\User.ts">
+      <DependentUpon>ng2List.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_models\interfaces.ts" />
+    <TypeScriptCompile Include="src\app\_models\_gen\modelInterfaces.ts">
+      <DependentUpon>modelInterfaces.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="src\app\_services\auth.service.ts" />
+    <TypeScriptCompile Include="src\app\_services\data.service.ts" />
+    <TypeScriptCompile Include="src\app\_services\_gen\serviceImplementation.ts">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>serviceImplementation.tt</DependentUpon>
+    </TypeScriptCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\app\_views\_gen\_create\" />
+    <Folder Include="src\app\_views\_gen\_detail\" />
+    <Folder Include="src\app\_views\_gen\_edit\" />
+    <Folder Include="src\app\_views\_gen\_list\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,15 @@
+﻿@import '~@swimlane/ngx-datatable/release/index';
+@import '~@swimlane/ngx-datatable/release/themes/material';
+/*@import '~@swimlane/ngx-datatable/release/assets/icons';*/
+
+.ngx-datatable {
+  color : black;
+}
+
+.ngx-datatable.material {
+  background: rgba(255, 255, 255, .2);
+}
+
+.ngx-datatable.material .datatable-header .datatable-header-cell {
+  color: black;
+}

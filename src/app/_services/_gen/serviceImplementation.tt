@@ -1,0 +1,34 @@
+﻿<#@ template language="C#" hostSpecific="false" debug="false" #>
+<#@ output extension="ts" #>
+<#@ include file="T4Toolbox.tt" #>
+<#@ assembly name="C:\Program Files (x86)\LayrCake\CodeGen\LayrCake_CodeGen.dll" #>
+<#@ import namespace="LayrCake_CodeGen.Templates" #>
+<#@ import namespace="System.Diagnostics" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+	string path = @"C:\_MacBookRepo\trunk\LayrCake\Projects\09_UmlModel\LayrCake.EAP";
+	string modelNamespace = "Model$1. Presentation Model$LayrCake$LayrCake$Models$Implementation";
+	string currentProjectName = @"LayrCake";
+	string lowerLayerProjectName = @"LayrCake.API";
+	using (UmlVSGenerator_LC generator = new UmlVSGenerator_LC("4000001", modelNamespace))
+	{
+        generator.TemplateName = "AngularService";
+        generator.NamespaceOverride = "Services"; 
+		generator.CurrentProjectName = currentProjectName;
+		generator.LowerLayerProjectName = lowerLayerProjectName;
+		var excludeList = new List<string>()
+		{
+			"IActionService", "BaseDataAccessObject", "DataTransferObject", "UniversalLookup", "UserBrowser", "UserCredential", "Config", "ElementName",
+			"Address", "AspGoogleUser", "AspNetRole", "AspNetUserClaim","AspNetUserLogin","AspNetUserRole",
+			"Blob","Country","CompanyMerchantLink","CountryCurrencyMap","Currency","DDDConnector","DDDFile",
+			"DDDFolder","GroupMembership","PasswordHistory","Person","RoleMembership","TrafficDetail","UserAccess",
+			"UserRegistration","UserSession","UserSessionHistory"
+			
+		};
+
+		generator.RenderExceptionList = excludeList;
+		generator.RenderToSingleFile = true;
+    	generator.Run();
+	}
+#>

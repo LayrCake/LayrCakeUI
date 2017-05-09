@@ -1,0 +1,14 @@
+﻿@import '~@swimlane/ngx-datatable/release/index';
+@import '~@swimlane/ngx-datatable/release/themes/material';
+/*@import '~@swimlane/ngx-datatable/release/assets/icons';*/
+
+#myOverview {
+  position: absolute;
+  top: 160px;
+  left: 15px;
+  background-color: aliceblue;
+  z-index: 300; /* make sure its in front */
+  border: solid 1px blue;
+  width: 200px;
+  height: 100px;
+}
