@@ -1,6 +1,6 @@
 FROM node:6.9.5
 
-RUN git clone https://github.com/akveo/ng2-admin.git /var/www \
+RUN git clone https://HughProctor@layrcakerad.scm.azurewebsites.net:443/LayrCakeRAD.git /var/www \
     && cd /var/www \
     && npm install --global rimraf \
     && npm run clean \

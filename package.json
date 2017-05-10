@@ -195,10 +195,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/akveo/ng2-admin.git"
+    "url": "https://github.com/LayrCake/LayrCakeUI.git"
   },
   "bugs": {
-    "url": "https://github.com/akveo/ng2-admin/issues"
+    "url": "https://github.com/LayrCake/LayrCakeUI/issues"
   },
   "engines": {
     "node": ">= 5.4.1 < 7"
