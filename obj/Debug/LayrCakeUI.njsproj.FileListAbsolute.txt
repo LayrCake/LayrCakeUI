@@ -1,2 +1,0 @@
-C:\_MacBookRepo\trunk\DataVisualiser\Projects\01_Presentation\LayrCakeUI\bin\Microsoft.NodejsTools.WebRole.dll
-C:\_MacBookRepo\trunk\DataVisualiser\Projects\01_Presentation\LayrCakeUI\obj\Debug\LayrCakeUI.njsprojResolveAssemblyReference.cache

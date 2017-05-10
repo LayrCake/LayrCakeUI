@@ -1,1 +1,0 @@
-C:\_MacBookRepo\trunk\DataVisualiser\Projects\01_Presentation\LayrCakeUI\obj\Debug\LayrCakeUI_2015.csprojResolveAssemblyReference.cache
