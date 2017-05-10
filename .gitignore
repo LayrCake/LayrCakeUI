@@ -67,3 +67,8 @@ npm-debug.log
 *.css.shim.ts
 *.ngsummary.json
 *.shim.ngstyle.ts
+
+# Visual Studio #
+/.vs
+/.vscode
+build/Debug
