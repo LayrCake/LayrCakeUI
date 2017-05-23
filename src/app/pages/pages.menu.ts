@@ -15,6 +15,18 @@
                 }
             },
             {
+                path: 'company',
+                data: {
+                    menu: {
+                        title: 'Companies',
+                        icon: 'ion-person-stalker',
+                        selected: false,
+                        expanded: false,
+                        order: 10
+                    }
+                }
+            },
+            {
                 path: 'customers',
                 data: {
                     menu: {

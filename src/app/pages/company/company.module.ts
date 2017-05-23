@@ -1,26 +1,30 @@
-﻿import { NgModule }      from '@angular/core';
-import { CommonModule }  from '@angular/common';
+﻿import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { CKEditorModule } from 'ng2-ckeditor';
-import { NgaModule } from '../../theme/nga.module';
+import { NgaModule } from 'theme/nga.module';
+import { SharedModule } from 'shared/shared.module';
+import { routing } from './company.routing';
 
-import { routing }       from './company.routing';
-import { Company } from './company.component';
-//import { Ckeditor } from './components/ckeditor/ckeditor.component';
+import { CompanyComponent } from './company.component';
+import { CompaniesCardComponent } from './company-card.component';
+import { CompaniesGridComponent } from './company-grid.component';
 
+import { GenericTableModule } from '@angular-generic-table/core';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    NgaModule,
-    //CKEditorModule,
-    routing
-  ],
-  declarations: [
-    Company,
-    //Ckeditor
-  ]
+    imports: [
+        CommonModule,
+        FormsModule,
+        NgaModule,
+        SharedModule,
+        routing,
+        GenericTableModule, 
+    ],
+    declarations: [
+        CompanyComponent,
+        CompaniesCardComponent,
+        CompaniesGridComponent
+    ]
 })
 export class CompanyModule {
 }

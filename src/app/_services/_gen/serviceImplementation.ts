@@ -15,11 +15,12 @@ import 'rxjs/add/observable/throw';
 import { Observer } from 'rxjs/Observer';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch';
+import { BaseSessionService } from '../baseSessionService';
 
 import { IAspNetUser, ICompany, IDDDAttribute, IDDDElement, IDDDLayer, IDDDLayerTemplate, IDDDMethod, IDDDPackage, IDDDPackageToPackageLink, IDDDProject, IDDDProperty, IDDDSolution, IDDDSolutionToPackageLink, IMerchantProblemDomainLink, IProblemDomain, IProblemDomainSolutionLink, IProfile, IUser, IPagedResults } from '_models/_gen/modelInterfaces';
 @Injectable()
-export class BaseDataService {
-     baseUrl: string = 'http://13.93.125.180:8731';
+export class BaseDataService extends BaseSessionService {
+     //baseUrl: string = 'http://13.93.125.180:8731';
 
 	aspNetUsersBaseUrl : string = this.baseUrl + '/tables/aspnetuser';
 	companiesBaseUrl : string = this.baseUrl + '/tables/company';
@@ -40,10 +41,12 @@ export class BaseDataService {
 	profilesBaseUrl : string = this.baseUrl + '/tables/profile';
 	usersBaseUrl : string = this.baseUrl + '/tables/user';
 
-	constructor(public http: Http) { }
+	constructor(public http: Http) {
+		super();
+	}
 
 	getAspNetUsers() : Observable<IAspNetUser[]> {
-	      return this.http.get(this.aspNetUsersBaseUrl)
+		return this.http.get(this.aspNetUsersBaseUrl, this.prepareRequest())
 	             .map((res: Response) => {
 	                 let aspNetUsers = res.json();
 	                 return aspNetUsers;
@@ -51,7 +54,7 @@ export class BaseDataService {
 	             .catch(this.handleError);
 	}
 	getAspNetUsersPage(page: number, pageSize: number) : Observable<IPagedResults<IAspNetUser[]>> {
-	      return this.http.get(`${this.aspNetUsersBaseUrl}/page/${page}/${pageSize}`)
+		return this.http.get(`${this.aspNetUsersBaseUrl}/page/${page}/${pageSize}`, this.prepareRequest())
 	             .map((res: Response) => {
 	                 const totalRecords = +res.headers.get('X-InlineCount');
 	                 let aspNetUsers = res.json();
@@ -63,7 +66,7 @@ export class BaseDataService {
 	             .catch(this.handleError);
 	}
 	getAspNetUser(id: number) : Observable<IAspNetUser> {
-	      return this.http.get(this.aspNetUsersBaseUrl + '/' + id)
+	      return this.http.get(this.aspNetUsersBaseUrl + '/' + id, this.prepareRequest())
 	             .map((res: Response) => {
 	                 let aspNetUser = res.json();
 	                 return aspNetUser;
@@ -71,23 +74,23 @@ export class BaseDataService {
 	             .catch(this.handleError);
 	}
 	insertAspNetUser(aspNetUser: IAspNetUser) : Observable<IAspNetUser> {
-	      return this.http.post(this.aspNetUsersBaseUrl, aspNetUser)
+	      return this.http.post(this.aspNetUsersBaseUrl, aspNetUser, this.prepareRequest())
 	             .map((res: Response) => res.json())
 	             .catch(this.handleError);
 	}
 	updateAspNetUser(aspNetUser: IAspNetUser) : Observable<boolean> {
-	      return this.http.put(this.aspNetUsersBaseUrl + '/' + aspNetUser.id, aspNetUser)
+	      return this.http.put(this.aspNetUsersBaseUrl + '/' + aspNetUser.id, aspNetUser, this.prepareRequest())
 	             .map((res: Response) => res.json())
 	             .catch(this.handleError);
 	}
 	deleteAspNetUser(id: number) : Observable<boolean> {
-	      return this.http.delete(this.aspNetUsersBaseUrl + '/' + id)
+	      return this.http.delete(this.aspNetUsersBaseUrl + '/' + id, this.prepareRequest())
 	             .map((res: Response) => res.json())
 	             .catch(this.handleError);
 	}
 	
 	getCompanies() : Observable<ICompany[]> {
-	      return this.http.get(this.companiesBaseUrl)
+	      return this.http.get(this.companiesBaseUrl, this.prepareRequest())
 	             .map((res: Response) => {
 	                 let companies = res.json();
 	                 return companies;
@@ -95,7 +98,7 @@ export class BaseDataService {
 	             .catch(this.handleError);
 	}
 	getCompaniesPage(page: number, pageSize: number) : Observable<IPagedResults<ICompany[]>> {
-	      return this.http.get(`${this.companiesBaseUrl}/page/${page}/${pageSize}`)
+	      return this.http.get(`${this.companiesBaseUrl}/page/${page}/${pageSize}`, this.prepareRequest())
 	             .map((res: Response) => {
 	                 const totalRecords = +res.headers.get('X-InlineCount');
 	                 let companies = res.json();
@@ -107,7 +110,7 @@ export class BaseDataService {
 	             .catch(this.handleError);
 	}
 	getCompany(id: number) : Observable<ICompany> {
-	      return this.http.get(this.companiesBaseUrl + '/' + id)
+	      return this.http.get(this.companiesBaseUrl + '/' + id, this.prepareRequest())
 	             .map((res: Response) => {
 	                 let company = res.json();
 	                 return company;
@@ -115,17 +118,17 @@ export class BaseDataService {
 	             .catch(this.handleError);
 	}
 	insertCompany(company: ICompany) : Observable<ICompany> {
-	      return this.http.post(this.companiesBaseUrl, company)
+	      return this.http.post(this.companiesBaseUrl, company, this.prepareRequest())
 	             .map((res: Response) => res.json())
 	             .catch(this.handleError);
 	}
 	updateCompany(company: ICompany) : Observable<boolean> {
-	      return this.http.put(this.companiesBaseUrl + '/' + company.id, company)
+	      return this.http.put(this.companiesBaseUrl + '/' + company.id, company, this.prepareRequest())
 	             .map((res: Response) => res.json())
 	             .catch(this.handleError);
 	}
 	deleteCompany(id: number) : Observable<boolean> {
-	      return this.http.delete(this.companiesBaseUrl + '/' + id)
+	      return this.http.delete(this.companiesBaseUrl + '/' + id, this.prepareRequest())
 	             .map((res: Response) => res.json())
 	             .catch(this.handleError);
 	}

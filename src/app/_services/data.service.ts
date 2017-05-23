@@ -3,8 +3,8 @@ import { Http, Response } from '@angular/http';
 
 //Grab everything with import 'rxjs/Rx';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/throw';
 import { Observer } from 'rxjs/Observer';
+import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map'; 
 import 'rxjs/add/operator/catch';
 import { BaseDataService } from './_gen/serviceImplementation';
@@ -23,6 +23,7 @@ export class DataService extends BaseDataService {
     //constructor(private http: Http) { }
     
     getCustomers() : Observable<ICustomer[]> {
+
         return this.http.get(this.customersBaseUrl)
                     .map((res: Response) => {
                         let customers = res.json();

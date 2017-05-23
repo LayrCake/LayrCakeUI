@@ -1,5 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { GtConfig } from '@angular-generic-table/core';
+import { DataService } from '_services/data.service';
 
 export interface rowData {
     id: number,
@@ -20,7 +21,7 @@ export class CustomersGridGenericComponent { // implements OnInit
     public data: Array<rowData> = [];
     public configObject: GtConfig<rowData>;
 
-    constructor() {
+    constructor(private dataService: DataService) {
 
         this.configObject = {
             settings: [{

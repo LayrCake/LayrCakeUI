@@ -1,7 +1,8 @@
-{
+﻿{
   "compilerOptions": {
+    "outDir": "dist",
     "target": "es5",
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -33,7 +34,7 @@
     "genDir": "./compiled",
     "skipMetadataEmit": true
   },
-  "compileOnSave": false,
+  "compileOnSave": true,
   "buildOnSave": false,
   "atom": {
     "rewriteTsconfig": false

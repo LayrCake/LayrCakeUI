@@ -1,4 +1,4 @@
-import { ModuleWithProviders } from '@angular/core';
+﻿import { ModuleWithProviders } from '@angular/core';
 import { Routes } from '@angular/router';
 
 export interface ICustomer {
@@ -36,7 +36,25 @@ export interface IPagedResults<T> {
     results: T;
 }
 
+export interface RouteErrors {
+    route: string;
+    error: string;
+    errors: any;
+}
+
+export interface MVCErrors {
+    route: string;
+    error: string;
+    errors: any;
+}
+
 export interface IUserLogin {
     email: string;
     password: string;
+}
+
+export interface IUserRegister {
+    email: string;
+    password: string;
+    confirmpassword: string;
 }

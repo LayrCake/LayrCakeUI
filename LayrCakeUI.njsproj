@@ -1,10 +1,10 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
     <Name>LayrCakeUI</Name>
     <RootNamespace>LayrCakeUI</RootNamespace>
-    <NodeExePath>C:\Program Files\nodejs\node.exe</NodeExePath>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -12,8 +12,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>99c3a2a3-942b-4d1c-885f-a84805658b2a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>server.ts</StartupFile>
-    <StartWebBrowser>True</StartWebBrowser>
+    <StartupFile>bin\www</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -33,6 +32,12 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="bin\ChangeConfig.ps1" />
+    <Content Include="bin\download.ps1" />
+    <Content Include="bin\Microsoft.NodejsTools.WebRole.dll" />
+    <Content Include="bin\node.cmd" />
+    <Content Include="bin\setup_web.cmd" />
+    <Content Include="bin\www" />
     <Content Include="data\customers.json" />
     <Content Include="data\states.json" />
     <Content Include="src\app\app.scss" />
@@ -41,6 +46,12 @@
     <Content Include="src\app\core\modal\modal.component.html" />
     <Content Include="src\app\pages\charts\components\chartistJs\chartistJs.html" />
     <Content Include="src\app\pages\charts\components\chartistJs\chartistJs.scss" />
+    <Content Include="src\app\pages\company\company-card.component.html" />
+    <Content Include="src\app\pages\company\company-card.component.scss" />
+    <Content Include="src\app\pages\company\company-grid.component.scss" />
+    <Content Include="src\app\pages\company\company-grid.component.html" />
+    <Content Include="src\app\pages\company\company.html" />
+    <Content Include="src\app\pages\company\company.scss" />
     <Content Include="src\app\pages\components\components.scss" />
     <Content Include="src\app\pages\components\components\treeView\treeView.html" />
     <Content Include="src\app\pages\customers\components\generic\customers-generic.component.css" />
@@ -338,6 +349,7 @@
     <Content Include="src\meta\humans.txt" />
     <Content Include="src\meta\robots.txt" />
     <Content Include="src\package.json" />
+    <Compile Include="Startup.cs" />
     <Content Include="tsconfig.json" />
     <Content Include="tslint.json" />
     <Content Include="typedoc.json" />
@@ -372,7 +384,9 @@
     <Content Include="docs\templates\layout.jade" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <TypeScriptCompile Include="server.ts" />
+    <Content Include="Web.config" />
+    <None Include="Web.Debug.config" />
+    <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\app.routing.ts" />
@@ -401,6 +415,8 @@
     <TypeScriptCompile Include="src\app\pages\charts\components\chartistJs\chartistJs.service.ts" />
     <TypeScriptCompile Include="src\app\pages\charts\components\chartistJs\index.ts" />
     <TypeScriptCompile Include="src\app\pages\charts\index.ts" />
+    <TypeScriptCompile Include="src\app\pages\company\company-card.component.ts" />
+    <TypeScriptCompile Include="src\app\pages\company\company-grid.component.ts" />
     <TypeScriptCompile Include="src\app\pages\company\company.component.ts" />
     <TypeScriptCompile Include="src\app\pages\company\company.module.ts" />
     <TypeScriptCompile Include="src\app\pages\company\company.routing.ts" />
@@ -716,6 +732,9 @@
     <TypeScriptCompile Include="src\app\_models\interfaces.ts" />
     <TypeScriptCompile Include="src\app\_models\_gen\modelInterfaces.ts" />
     <TypeScriptCompile Include="src\app\_services\auth.service.ts" />
+    <TypeScriptCompile Include="src\app\_services\baseSessionService.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="src\app\_services\data.service.ts" />
     <TypeScriptCompile Include="src\app\_services\_gen\serviceImplementation.ts" />
     <TypeScriptCompile Include="src\custom-typings.d.ts" />
@@ -748,6 +767,7 @@
     <Folder Include="docs\contents\images\" />
     <Folder Include="docs\plugins\" />
     <Folder Include="docs\templates\" />
+    <Folder Include="bin\" />
     <Folder Include="src\" />
     <Folder Include="src\app\" />
     <Folder Include="src\app\core\" />

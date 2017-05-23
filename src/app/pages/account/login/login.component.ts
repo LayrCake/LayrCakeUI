@@ -14,35 +14,36 @@ import 'style-loader!./login.scss';
     templateUrl: './login.html'
 })
 export class Login implements OnInit {
-    public loginForm: FormGroup;
+    public form: FormGroup;
     public errorMessage: string;
 
     public email: AbstractControl;
     public password: AbstractControl;
     public submitted: boolean = false;
 
-    constructor(private formBuilder: FormBuilder,
+    constructor(private fb: FormBuilder,
         private router: Router,
         private authService: AuthService,
         private growlService: GrowlerService) { }
 
     ngOnInit() {
+        this.authService.logout();
         this.buildForm();
     }
 
     buildForm() {
-        this.loginForm = this.formBuilder.group({
+        this.form = this.fb.group({
             email: ['', Validators.compose([Validators.required, Validators.minLength(4)])],
             password: ['', Validators.compose([Validators.required, Validators.minLength(4)])]
         });
 
-        this.email = this.loginForm.controls['email'];
-        this.password = this.loginForm.controls['password'];
+        this.email = this.form.controls['email'];
+        this.password = this.form.controls['password'];
     }
 
     public onSubmit({ value, valid }: { value: IUserLogin, valid: boolean }) {
         this.submitted = true;
-        if (this.loginForm.valid) {
+        if (this.form.valid) {
             this.authService.login(value)
                 .subscribe((status: boolean) => {
                     if (status) {
@@ -64,26 +65,6 @@ export class Login implements OnInit {
                     this.errorMessage = loginError;
                     this.growlService.growl(loginError, GrowlerMessageType.Danger);
                 });
-            //(err: any) => console.log(err));).catch(error: any){;
-
-
-            //.subscribe((status: boolean) => {
-            //    if (status) {
-            //        this.growler.growl('Logged in', GrowlerMessageType.Info);
-            //        if (this.authService.redirectUrl) {
-            //            const redirectUrl = this.authService.redirectUrl;
-            //            this.authService.redirectUrl = '';
-            //            this.router.navigate([redirectUrl]);
-            //        } else {
-            //            this.router.navigate(['/dashboard']);
-            //        }
-            //    } else {
-            //        const loginError = 'Unable to login';
-            //        this.errorMessage = loginError;
-            //        this.growler.growl(loginError, GrowlerMessageType.Danger);
-            //    }
-            //},
-            //(err: any) => console.log(err));
         }
     }
 }

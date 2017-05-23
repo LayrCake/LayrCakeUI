@@ -70,7 +70,7 @@ export class CompanyEditComponent implements OnInit {
 					if (insertedCompany) {
 						//Mark form as pristine so that CanDeactivateGuard won't prompt before navigation
 						this.companiesForm.form.markAsPristine();
-						this.router.navigate(['/companies']);
+						this.router.navigate(['/company']);
 					} else {
 						const msg = 'Unable to insert company';
 						this.growler.growl(msg, GrowlerMessageType.Danger);
@@ -100,7 +100,7 @@ export class CompanyEditComponent implements OnInit {
 	cancel(event: Event) {
 		event.preventDefault();
 		//Route guard will take care of showing modal dialog service if data is dirty
-		this.router.navigate(['/companies']);
+		this.router.navigate(['/company']);
 	}
 
 	delete(event: Event) {
@@ -108,7 +108,7 @@ export class CompanyEditComponent implements OnInit {
 		this.dataService.deleteCompany(this.company.id)
 			.subscribe((status: boolean) => {
 				if (status) {
-					this.router.navigate(['/companies']);
+					this.router.navigate(['/company']);
 				}
 				else {
 					this.errorMessage = 'Unable to delete company';

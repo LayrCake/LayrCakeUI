@@ -1,0 +1,19 @@
+﻿<div class="al-menubuttons">
+  <ul class="btn-list clearfix">
+    <li>
+      <a (click)="changeDisplayMode(displayModeEnum.Card)" [class.active]="displayMode === displayModeEnum.Card" class="btn btn-primary btn-with-icon"><i class="ion-android-download"></i></a> <!--Card View-->
+    </li>
+    <li>
+      <a (click)="changeDisplayMode(displayModeEnum.Grid)" [class.active]="displayMode === displayModeEnum.Grid" class="btn btn-primary btn-with-icon"><i class="ion-stats-bars"></i></a> <!--List View-->
+    </li>
+    <li>
+      <a (click)="lgModal.show()" class="btn btn-primary btn-with-icon"><i class="ion-stats-bars"></i></a> <!--New Company-->
+    </li>
+  </ul>
+</div>
+
+<cm-company-card [companies]="filteredCompanies" [hidden]="displayMode !== displayModeEnum.Card"></cm-company-card>
+<!--
+<cm-company-grid [companies]="filteredCompanies" [hidden]="displayMode !== displayModeEnum.Grid"></cm-company-grid>
+<!--
+<cm-pagination [totalItems]="totalRecords" [pageSize]="pageSize" (pageChanged)="pageChanged($event)"></cm-pagination>-->

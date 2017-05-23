@@ -1,4 +1,4 @@
-@import 'conf/conf';
+﻿@import 'conf/conf';
 
 $text-color: #ffffff;
 
@@ -122,6 +122,56 @@ a.forgot-pass {
   }
 }
 
-.btn-auth {
-  color: #ffffff!important;
+.alert {
+  ul {
+    margin-bottom: 0px;
+  }
 }
+
+.btn-auth {
+  color: #ffffff !important;
+}
+
+@media (max-width: 590px) {
+  .auth-block {
+    width: 95%;
+    padding: 12px;
+
+    h1 {
+      margin-bottom: 12px;
+    }
+  }
+  .auth-link {
+    margin-bottom: 12px;
+  }
+
+  .form-group label {
+    margin-bottom: 0px;
+  }
+
+  .al-share-auth {
+    display: none;
+  }
+  .auth-sep {
+    display: none;
+  }
+  .btn-auth {
+    float: right;
+  }
+  .forgot-pass {
+    padding-right: 15px;
+    margin-top: 7px;
+  }
+
+  .alert {
+    margin-bottom: 0px;
+    margin-top:1rem;
+    ul {
+      padding-left: 10px;
+    }
+
+
+  }
+
+}
+

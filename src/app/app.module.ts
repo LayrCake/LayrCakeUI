@@ -18,8 +18,9 @@ import { AppState, InternalStateType } from './app.service';
 import { GlobalState } from './global.state';
 import { NgaModule } from './theme/nga.module';
 import { PagesModule } from './pages/pages.module';
+import { AuthGuard } from './_guards/index';
 
-import { LoginModule } from './pages/login/login.module';
+import { LoginModule } from './pages/account/login/login.module';
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -56,6 +57,7 @@ export type StoreType = {
         routing
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
+        AuthGuard,
         ENV_PROVIDERS,
         APP_PROVIDERS
     ]
