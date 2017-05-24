@@ -19,6 +19,7 @@ export class BaPageTop {
     public isScrolled: boolean = false;
     public isMenuCollapsed: boolean = false;
     private sub: Subscription;
+    private loginLogoutText: string;
 
     constructor(private _state: GlobalState, private router: Router, private authService: AuthService, private growler: GrowlerService) {
         this._state.subscribe('menu.isCollapsed', (isCollapsed) => {
@@ -49,7 +50,6 @@ export class BaPageTop {
     }
 
     public profileClick() {
-
     }
 
     public settingsClick() {
@@ -63,7 +63,6 @@ export class BaPageTop {
                 .subscribe((status: boolean) => {
                     this.setLoginLogoutText();
                     this.growler.growl('Logged Out', GrowlerMessageType.Info);
-                    this.router.navigate(['/customers']);
                     return;
                 },
                 (err: any) => console.log(err));
@@ -76,7 +75,7 @@ export class BaPageTop {
     }
 
     setLoginLogoutText() {
-        //Todo:  this.loginLogoutText = (this.authService.isAuthenticated) ? 'Logout' : 'Login';
+        this.loginLogoutText = (this.authService.isAuthenticated) ? 'Logout' : 'Login';
     }
 
 }

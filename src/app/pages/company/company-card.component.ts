@@ -10,7 +10,7 @@ import 'style-loader!./company-card.component.scss';
 @Component({
     selector: 'cm-company-card',
     templateUrl: 'company-card.component.html',
-    //styleUrls: ['companies-card.component.css'],
+    //styleUrls: ['companies-card.component.scss'],
     //Add [@flyInOut]="'in'" into template on card
     // animations: [
     //   trigger('flyInOut', [

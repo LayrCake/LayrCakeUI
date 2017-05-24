@@ -7,11 +7,12 @@ import { ValidationService } from 'core/services/validation.service';
 import { IUserLogin } from '_models/interfaces';
 import { GrowlerService, GrowlerMessageType } from 'core/growler/growler.service';
 
-import 'style-loader!./login.scss';
+//import 'style-loader!./login.scss';
 
 @Component({
     selector: 'login',
-    templateUrl: './login.html'
+    templateUrl: './login.html',
+    styleUrls: ['./login.scss']
 })
 export class Login implements OnInit {
     public form: FormGroup;

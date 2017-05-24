@@ -78,6 +78,7 @@ $hoverlink: darken($activelink, 20%);
     background-size: cover;
     will-change: transform;
     z-index: 0;
+    opacity: 0.8;
   }
 }
 

@@ -58,3 +58,13 @@ export interface IUserRegister {
     password: string;
     confirmpassword: string;
 }
+
+export interface IUserForgotPass {
+    email: string;
+}
+
+export interface IUserProfile {
+    firstName: string;
+    lastName: string;
+    profilePic: string;
+}

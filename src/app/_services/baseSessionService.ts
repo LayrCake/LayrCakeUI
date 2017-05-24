@@ -11,7 +11,6 @@ export class BaseSessionService {
 	}
 
     prepareRequest() : RequestOptions {
-        debugger;
         let token = localStorage.getItem("accessToken");
         let headers = new Headers({ "Authorization": "Bearer " + token });
         let options = new RequestOptions({ headers: headers });

@@ -1,7 +1,6 @@
 ﻿import { Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { GtConfig } from '@angular-generic-table/core';
 import { DataService } from '_services/data.service';
-import { ICompany } from '_models/_gen/modelInterfaces';
 
 import { SorterService } from 'core/services/sorter.service';
 import { TrackByService } from 'core/services/trackby.service';
@@ -25,13 +24,7 @@ export class CompaniesGridComponent implements OnInit {
     public data: Array<rowData> = [];
     public configObject: GtConfig<rowData>;
 
-    @Input() companies: ICompany[] = [];
-
-    ngOnInit() {
-        this.configObject.data = this.companies;
-    }
-
-    constructor(private dataService: DataService, private trackbyService: TrackByService) {
+    constructor(private dataService: DataService) {
         this.configObject = {
             settings: [{
                 objectKey: 'id',
@@ -62,13 +55,13 @@ export class CompaniesGridComponent implements OnInit {
         };
     }
 
-    //ngOnInit() {
-    //    this.dataService.getCompanies()
-    //        .subscribe((result) => {
-    //            setTimeout(() => {
-    //                this.configObject.data = result;
-    //            }, 1000);
-    //        });
-    //}
+    ngOnInit() {
+        this.dataService.getCompanies()
+            .subscribe((result) => {
+                setTimeout(() => {
+                    this.configObject.data = result;
+                }, 1000);
+            });
+    }
 
 }

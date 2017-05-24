@@ -6,8 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { RouteErrors, IUserLogin, IUserRegister } from '_models/interfaces';
-import {  } from '_models/interfaces';
+import { RouteErrors, IUserLogin, IUserRegister, IUserForgotPass } from '_models/interfaces';
 
 @Injectable()
 export class AuthService {
@@ -15,6 +14,7 @@ export class AuthService {
     private loginUrl: string = this.baseUrl + '/token';
     private registerUrl: string = this.baseUrl + '/api/account/register';
     private logoutUrl: string = this.baseUrl + '/api/account/logout';
+    private forgotPassUrl: string = this.baseUrl + '/api/account/forgotPassword';
     private errMessages: string[];
 
     public isAuthenticated: boolean = false;
@@ -63,6 +63,13 @@ export class AuthService {
 
     register(userRegister: IUserRegister): Observable<boolean> {
         return this.http.post(this.registerUrl, userRegister)
+            .map((response: Response) => {
+                return status;
+            }).catch(this.handleModelError);;
+    }
+
+    forgotPassword(userForgotPass: IUserForgotPass): Observable<boolean> {
+        return this.http.post(this.registerUrl, userForgotPass)
             .map((response: Response) => {
                 return status;
             }).catch(this.handleModelError);;

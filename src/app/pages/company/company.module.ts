@@ -8,6 +8,7 @@ import { routing } from './company.routing';
 import { CompanyComponent } from './company.component';
 import { CompaniesCardComponent } from './company-card.component';
 import { CompaniesGridComponent } from './company-grid.component';
+import { CompanyEditComponent } from '_controllers/_gen/_edit/company.component';
 
 import { GenericTableModule } from '@angular-generic-table/core';
 
@@ -23,7 +24,8 @@ import { GenericTableModule } from '@angular-generic-table/core';
     declarations: [
         CompanyComponent,
         CompaniesCardComponent,
-        CompaniesGridComponent
+        CompaniesGridComponent,
+        CompanyEditComponent
     ]
 })
 export class CompanyModule {

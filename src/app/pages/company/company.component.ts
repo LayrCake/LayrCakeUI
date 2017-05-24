@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ModalDirective } from 'ngx-bootstrap';
 
 import { DataService } from '_services/data.service';
 import { ICompany, IPagedResults } from '_models/_gen/modelInterfaces';
@@ -10,6 +11,7 @@ import 'style-loader!./company.scss';
     templateUrl: './company.html'
 })
 export class CompanyComponent implements OnInit {
+  @ViewChild('childModal') childModal: ModalDirective;
 
     title: string;
     filterText: string;
@@ -53,7 +55,7 @@ export class CompanyComponent implements OnInit {
         this.dataService.getCompanies()
             .subscribe((response: ICompany[]) => {
                 this.companies = response;
-                //this.totalRecords = response.totalRecords;
+                this.totalRecords = this.companies.length;
             },
             (err: any) => console.log(err),
             () => console.log('getCompanies() retrieved companies'));
@@ -69,6 +71,39 @@ export class CompanyComponent implements OnInit {
             this.filteredCompanies = this.companies;
         }
     }
+
+    createNew() {
+       this.showChildModal()
+    }
+
+    showChildModal(): void {
+        this.childModal.show();
+    }
+
+    hideChildModal(): void {
+        this.childModal.hide();
+    }
+    //lgModal.show()
+    /*
+    detail(row: any) {
+        //this.routing.navigateByUrl('/details/' + row.id);
+    }
+
+    delete(row: any) {
+
+    }
+
+    send(row: any) {
+
+    }
+*/
+   /* showChildModal(): void {
+        this.childModal.show();
+    }
+
+    hideChildModal(): void {
+        this.childModal.hide();
+    }*/
 }
 
 enum DisplayModeEnum {
