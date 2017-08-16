@@ -1,6 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { GtConfig } from '@angular-generic-table/core';
 
+import { DataService } from '_services/data.service';
 
 @Component({
     selector: 'element-tables',
@@ -13,10 +14,10 @@ export class ElementTables3 {
     public data: Array<{
         id: number,
         name: string,
-        lucky_number: number
+        dddpackageref: number
     }> = [];
 
-    constructor() {
+    constructor(private dataService: DataService) {
 
         this.configObject = {
             settings: [{
@@ -28,7 +29,7 @@ export class ElementTables3 {
                 sort: 'enable',
                 columnOrder: 1
             }, {
-                objectKey: 'lucky_number',
+                objectKey: 'dddpackageref',
                 sort: 'enable',
                 columnOrder: 2
             }],
@@ -36,53 +37,21 @@ export class ElementTables3 {
                 name: 'Id',
                 objectKey: 'id'
             }, {
-                name: 'Name',
+                name: 'Package Name',
                 objectKey: 'name'
             }, {
-                name: 'Lucky number',
-                objectKey: 'lucky_number'
-            }],
-            data: [{
-                "id": 1,
-                "name": "Anna",
-                "lucky_number": 63
-            }, {
-                "id": 2,
-                "name": "Julie",
-                "lucky_number": 8
-            }, {
-                "id": 3,
-                "name": "Lillian",
-                "lucky_number": 30
-            }, {
-                "id": 4,
-                "name": "Norma",
-                "lucky_number": 13
-            }, {
-                "id": 5,
-                "name": "Ralph",
-                "lucky_number": 28
-            }, {
-                "id": 6,
-                "name": "Benjamin",
-                "lucky_number": 66
-            }, {
-                "id": 7,
-                "name": "George",
-                "lucky_number": 66
-            }, {
-                "id": 8,
-                "name": "Ryan",
-                "lucky_number": 65
-            }, {
-                "id": 9,
-                "name": "Martha",
-                "lucky_number": 57
-            }, {
-                "id": 10,
-                "name": "Todd",
-                "lucky_number": 65
+                name: 'Package Ref',
+                objectKey: 'dddpackageref'
             }]
         };
     }
+    ngOnInit(): void {
+        this.dataService.getDDDElements()
+            .subscribe((result) => {
+                setTimeout(() => {
+                    this.configObject.data = result;
+                }, 1000);
+            });
+    }
+
 }

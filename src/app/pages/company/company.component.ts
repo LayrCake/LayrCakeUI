@@ -1,17 +1,21 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from 'ngx-bootstrap';
+import { Ng2Bs3ModalModule, ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 import { DataService } from '_services/data.service';
 import { ICompany, IPagedResults } from '_models/_gen/modelInterfaces';
+import { modalHtml } from './components/company-edit-modal';
+
 import { FilterService } from 'core/services/filter.service';
 import 'style-loader!./company.scss';
 
 @Component({
     selector: 'cm-companies',
-    templateUrl: './company.html'
+    templateUrl: './company.html',
 })
 export class CompanyComponent implements OnInit {
-  @ViewChild('childModal') childModal: ModalDirective;
+  //@ViewChild('childModal') childModal: ModalDirective;
+  @ViewChild(modalHtml) modalHtml: modalHtml;
 
     title: string;
     filterText: string;
@@ -27,7 +31,7 @@ export class CompanyComponent implements OnInit {
     ngOnInit() {
         this.title = 'Companies';
         this.filterText = 'Filter Companies:';
-        this.displayMode = DisplayModeEnum.Card;
+        this.displayMode = DisplayModeEnum.Grid;
 
         //this.getCompaniesPage(1);
         this.getCompanies();
@@ -54,17 +58,18 @@ export class CompanyComponent implements OnInit {
     getCompanies() {
         this.dataService.getCompanies()
             .subscribe((response: ICompany[]) => {
-                this.companies = response;
+                debugger;
+                this.companies = this.filteredCompanies = response;
                 this.totalRecords = this.companies.length;
             },
             (err: any) => console.log(err),
-            () => console.log('getCompanies() retrieved companies'));
+            () => console.log('getCompanies() retrieved companies: ' + this.companies.length));
     }
 
     filterChanged(data: string) {
         if (data && this.companies) {
             data = data.toUpperCase();
-            const props = ['companyName', 'alias'];
+            const props = ['companyname', 'alias'];
             this.filteredCompanies = this.filterService.filter<ICompany>(this.companies, data, props);
         }
         else {
@@ -77,10 +82,10 @@ export class CompanyComponent implements OnInit {
     }
 
     showChildModal(): void {
-        this.childModal.show();
+        this.modalHtml.open();
     }
 
-    hideChildModal(): void {
+    /*hideChildModal(): void {
         this.childModal.hide();
     }
     //lgModal.show()

@@ -1,58 +1,51 @@
 ﻿import { Component } from '@angular/core';
 import { GtConfig } from '@angular-generic-table/core';
+
 import { DataService } from '_services/data.service';
 
-export interface rowData {
-    id: number,
-    companyName: string,
-    alias: string
-}
 @Component({
-    selector: 'cm-companies-generic',
-    templateUrl: 'companies-generic.component.html',
-    //styleUrls: ['companies-grid.component.css'],
-    //When using OnPush detectors, then the framework will check an OnPush 
-    //component when any of its input properties changes, when it fires 
-    //an event, or when an observable fires an event ~ Victor Savkin (Angular Team)
-    //changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'element-tables',
+    templateUrl: 'elementTables4.html'
 })
-export class CompaniesGridGenericComponent { // implements OnInit 
 
-    public data: Array<rowData> = [];
-    public configObject: GtConfig<rowData>;
+export class ElementTables4 {
+    public configObject: GtConfig<any>;
+
+    /*public data: Array<{
+        id: number,
+        companyname: string,
+        alias: number
+    }> = [];*/
 
     constructor(private dataService: DataService) {
+
         this.configObject = {
             settings: [{
                 objectKey: 'id',
                 sort: 'asc',
-                sortOrder: 1,
                 columnOrder: 0
             }, {
-                objectKey: 'companyName',
-                sort: 'asc',
-                sortOrder: 0,
+                objectKey: 'companyname',
+                sort: 'enable',
                 columnOrder: 1
             }, {
                 objectKey: 'alias',
                 sort: 'enable',
-                columnOrder: 2,
-                visible: true
+                columnOrder: 2
             }],
             fields: [{
                 name: 'Id',
                 objectKey: 'id'
             }, {
                 name: 'Company Name',
-                objectKey: 'companyName'
+                objectKey: 'companyname'
             }, {
                 name: 'Alias',
-                objectKey: 'alias',
+                objectKey: 'alias'
             }]
         };
     }
-
-    ngOnInit() {
+    ngOnInit(): void {
         this.dataService.getCompanies()
             .subscribe((result) => {
                 setTimeout(() => {
@@ -60,4 +53,5 @@ export class CompaniesGridGenericComponent { // implements OnInit
                 }, 1000);
             });
     }
+
 }

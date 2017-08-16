@@ -258,6 +258,14 @@
                         }
                     },
                     {
+                        path: 'elementtables4',
+                        data: {
+                            menu: {
+                                title: 'Element Tables 4',
+                            }
+                        }
+                    },
+                    {
                         path: 'elementGoJs',
                         data: {
                             menu: {

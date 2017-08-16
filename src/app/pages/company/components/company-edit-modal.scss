@@ -1,0 +1,14 @@
+.company-form input[type='text'], 
+.company-form input[type='number'],
+.company-form input[type='email'],
+.company-form select {
+    width:100%;
+}
+
+.company-form .ng-invalid {
+  border-left: 5px solid #a94442;
+}
+
+.company-form .ng-valid {
+  border-left: 5px solid #42A948;
+}

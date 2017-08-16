@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-header">
           <a [routerLink]="['/companies',company.id,'details']" class="white">
-            {{company.companyName | capitalize }}
+            {{company.companyname | capitalize }}
           </a>
           <a [routerLink]="['/companies',company.id,'edit']">
             <i title="Edit"
@@ -19,6 +19,10 @@
               </a>
             </div>-->
             <div class="pull-left card-body-right">
+              <div class="card-body-content">{{company.companyname | trim }}</div>
+              <!--<a [routerLink]="['/customers',customer.id,'orders']">View Orders</a>-->
+            </div>
+              <div class="pull-left card-body-right">
               <div class="card-body-content">{{company.alias | trim }}</div>
               <!--<a [routerLink]="['/customers',customer.id,'orders']">View Orders</a>-->
             </div>

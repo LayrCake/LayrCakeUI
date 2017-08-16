@@ -22,6 +22,7 @@ import { Tables } from './tables.component';
 import { ElementTables } from './components/elementTables/elementTables.component';
 import { ElementTables2 } from './components/elementTables/elementTables2.component';
 import { ElementTables3 } from './components/elementTables/elementTables3.component';
+import { ElementTables4 } from './components/elementTables/elementTables4.component';
 import { ElementGoJS } from './components/elementTables/elementGoJS.component';
 
 /** Components used in example */
@@ -90,6 +91,7 @@ import { ColumnSettingsModule } from '@angular-generic-table/column-settings/col
         ElementTables,
         ElementTables2,
         ElementTables3,
+        ElementTables4,
         ElementGoJS,
       /*  LocalizationComponent,
         ChangeColumnSettingsComponent,*/

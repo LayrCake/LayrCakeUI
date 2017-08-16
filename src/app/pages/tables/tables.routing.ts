@@ -6,6 +6,7 @@ import { Tables } from './tables.component';
 import { ElementTables } from './components/elementTables/elementTables.component';
 import { ElementTables2 } from './components/elementTables/elementTables2.component';
 import { ElementTables3 } from './components/elementTables/elementTables3.component';
+import { ElementTables4 } from './components/elementTables/elementTables4.component';
 import { ElementGoJS } from './components/elementTables/elementGoJS.component';
 
 // noinspection TypeScriptValidateTypes
@@ -19,6 +20,7 @@ const routes: Routes = [
             { path: 'elementtables', component: ElementTables },
             { path: 'elementtables2', component: ElementTables2 },
             { path: 'elementtables3', component: ElementTables3 },
+            { path: 'elementtables4', component: ElementTables4 },
             { path: 'elementGoJs', component: ElementGoJS }
         ]
     }

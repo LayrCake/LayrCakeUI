@@ -1,4 +1,6 @@
-﻿.basic-btns {
+﻿@import '../../theme/sass/conf/conf';
+
+.basic-btns {
   padding-top: 8px;
   margin-bottom: -8px;
   h5 {
@@ -41,7 +43,7 @@
 }
 
 ul.btn-list {
-  margin: 0 0 0 -18px;
+  margin: 0 0 0 0px;
   padding: 0;
   padding-top: 6px;
   clear: both;
@@ -138,8 +140,28 @@ $btn-icon-size: 34px;
   margin-top: -45px;
 }
 
+.menu-btn {
+  font-size: 16px;
+}
+
+.form-group {
+  label {
+    margin-bottom: 5px;
+    color: black;
+    font-weight: $font-normal;
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 800px) {
   .al-menubuttons {
     margin-top: 0px;
+  }
+}
+
+@media (max-width: $resXXS) {
+  ul.btn-list {
+    margin: 0;
+
   }
 }

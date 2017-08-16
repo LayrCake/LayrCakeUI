@@ -22,9 +22,9 @@ import { ICompany } from '_models/_gen/modelInterfaces';
 
 @Component({
 	selector: 'cm-company-edit',
-	//templateUrl: 'company-edit.component.html',
+	templateUrl: 'company-edit.html',
 	//styleUrls: [ 'company-edit.component.css' ]
-	template: ``
+	//template: ``
 })
 export class CompanyEditComponent implements OnInit {
 
